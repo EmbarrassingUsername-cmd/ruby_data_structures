@@ -31,13 +31,13 @@ class Board
   def knight_moves(start_position, finish_position)
     queue = []
     queue.push [start_position, [start_position]]
-    queue_item = [nil]
-    until queue_item[0] == finish_position
-      p queue_item = queue.shift
-      @board[queue_item[0]].moves.each { |move| queue.push([move, queue_item[1] + [move]]) }
+    node_and_move_list = [nil]
+    until node_and_move_list[0] == finish_position
+      node_and_move_list = queue.shift
+      @board[node_and_move_list[0]].moves.each { |move| queue.push([move, node_and_move_list[1] + [move]]) }
     end
-    puts "You made it in #{queue_item[1].length - 1} moves! Here's you path:"
-    puts queue_item[1].map(&:to_s)
+    puts "You made it in #{node_and_move_list[1].length - 1} moves! Here's you path:"
+    puts node_and_move_list[1].map(&:to_s)
   end
   # level order progression through Board Graph avoids loops if all
 end
