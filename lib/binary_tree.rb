@@ -1,4 +1,4 @@
-require 'pry'
+# frozen_string_literal: true
 
 # Node defines nodes in binary search tree
 class Node
