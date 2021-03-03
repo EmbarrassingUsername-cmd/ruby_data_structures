@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # linked list defines methods for linked list class implementation
-# head tail adnb size can all be defined as
+# head tail and size can all be defined as instance variables
 class LinkedList
   attr_reader :head
 
@@ -150,7 +150,11 @@ class Node
 end
 
 list = LinkedList.new
-list.append('test2').prepend('test1').append('test3').append('test4').append('test5')
+list.append('test2')
+list.prepend('test1')
+list.append('test3')
+list.append('test4')
+list.append('test5')
 p list.head.value
 p list.head.next_node.value
 p list.head.next_node.next_node.value

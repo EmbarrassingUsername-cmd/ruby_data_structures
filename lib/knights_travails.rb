@@ -13,6 +13,7 @@ class BoardSquare
     moves = ([-2, 2].product([-1, 1]) + [-1, 1].product([-2, 2])).map { |move| [move, @position].transpose.map(&:sum) }
     moves.select { |move| move[0].between?(0, 7) && move[1].between?(0, 7) }
   end
+  # determines valid moves from any node and returns an array to be stored in the node instance
 end
 
 # Board @board contains nodes represents full chess board as well as it'#s methods
@@ -38,7 +39,7 @@ class Board
     puts "You made it in #{queue_item[1].length - 1} moves! Here's you path:"
     puts queue_item[1].map(&:to_s)
   end
-  #
+  # level order progression through Board Graph avoids loops if all
 end
 
 a = Board.new

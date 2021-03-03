@@ -118,7 +118,7 @@ class Tree
   def height(node)
     return -1 if node.nil?
 
-    [height(node.left), height(node.left)].max + 1
+    [height(node.left), height(node.right)].max + 1
   end
 
   def depth(node)
